@@ -1,0 +1,7 @@
+{
+  "name": "ionSegment_ionModal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
