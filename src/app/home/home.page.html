@@ -62,7 +62,7 @@
 
   <!-- PESTAÑA ION MODAL -->
   @if (segmentoSeleccionado === 'modal') {
-    <ion-button expand="block" color="secondary" (click)="setOpen(true)">
+    <ion-button expand="block" (click)="setOpen2(true)">
       ION MODAL +
     </ion-button>
 
@@ -106,16 +106,92 @@
     <ng-template>
       <ion-header>
         <ion-toolbar color="tertiary">
-          <ion-title>Detalles de la App</ion-title>
+          <ion-title>Más de IonSegment</ion-title>
           <ion-buttons slot="end">
             <ion-button (click)="setOpen(false)">Cerrar</ion-button>
           </ion-buttons>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
-        <h2>¡Hola desde el Modal!</h2>
-        <p>Esta es una ventana superpuesta sobre la vista principal.</p>
+        <h2>Guía y Uso de IonSegment</h2>
+        <p>
+        Los <strong>IonSegment</strong> son barras de navegación que organizan y filtran contenido dentro de una misma vista, mejorando la experiencia de usuario en aplicaciones móviles.
+        </p>
+        <ion-list lines="full">
+        <ion-item>
+          <ion-icon name="options-outline" slot="start" color="primary"></ion-icon>
+          <ion-label>
+            <h3>Filtrado de Contenido</h3>
+            <p>Ideal para alternar entre categorías, estados o vistas sin cambiar de página.</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="swap-horizontal-outline" slot="start" color="primary"></ion-icon>
+          <ion-label>
+            <h3>Manejo de Eventos</h3>
+            <p>Utiliza <code>(ionChange)</code> para capturar la selección del usuario en tiempo real.</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="color-palette-outline" slot="start" color="primary"></ion-icon>
+          <ion-label>
+            <h3>Personalización</h3>
+            <p>Permite incluir iconos, texto y personalizar los estilos CSS fácilmente.</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
         <ion-button expand="block" color="danger" (click)="setOpen(false)">
+          Cerrar Modal
+        </ion-button>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <!-- SEGUNDO COMPONENTE MODAL -->
+  <ion-modal [isOpen]="isModalOpen2">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar color="tertiary">
+          <ion-title>Más de IonModal</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen2(false)">Cerrar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <h2>Guía y Uso de IonModal</h2>
+        <p>
+          El componente <strong>IonModal</strong> es una ventana superpuesta que aparece sobre el contenido principal para solicitar información o mostrar detalles adicionales.
+        </p>
+
+        <ion-list lines="full">
+          <ion-item>
+            <ion-icon name="layers-outline" slot="start" color="tertiary"></ion-icon>
+            <ion-label>
+              <h3>Tipos de Modales</h3>
+              <p>Se puede implementar como cuadro de diálogo flotante o como tarjeta (*Sheet Modal*).</p>
+            </ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon name="code-slash-outline" slot="start" color="tertiary"></ion-icon>
+            <ion-label>
+              <h3>Uso con Inline Template</h3>
+              <p>Se puede vincular fácilmente mediante la propiedad <code>[isOpen]</code> o mediante <code>ModalController</code>.</p>
+            </ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon name="construct-outline" slot="start" color="tertiary"></ion-icon>
+            <ion-label>
+              <h3>Paso de Datos</h3>
+              <p>Permite enviar y recibir parámetros entre la vista principal y la ventana emergente.</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+        <ion-button expand="block" color="danger" (click)="setOpen2(false)">
           Cerrar Modal
         </ion-button>
       </ion-content>

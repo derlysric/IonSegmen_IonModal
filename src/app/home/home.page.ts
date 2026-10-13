@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { 
-  IonHeader, 
-  IonToolbar, 
-  IonTitle, 
-  IonContent, 
-  IonSegment, 
-  IonSegmentButton, 
+import {
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonSegment,
+  IonSegmentButton,
   IonLabel,
   IonList,
   IonItem,
@@ -17,7 +17,8 @@ import {
   IonCardContent,
   IonButton,
   IonButtons,
-  IonModal
+  IonModal,
+  IonIcon
 } from '@ionic/angular';
 
 @Component({
@@ -28,12 +29,12 @@ import {
   imports: [
     CommonModule,
     FormsModule,
-    IonHeader, 
-    IonToolbar, 
-    IonTitle, 
-    IonContent, 
-    IonSegment, 
-    IonSegmentButton, 
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonSegment,
+    IonSegmentButton,
     IonLabel,
     IonList,
     IonItem,
@@ -43,7 +44,8 @@ import {
     IonCardContent,
     IonButton,
     IonButtons,
-    IonModal
+    IonModal,
+    IonIcon
   ],
 })
 export class HomePage {
@@ -51,11 +53,16 @@ export class HomePage {
 
   isModalOpen: boolean = false;
 
-  cambiarSegmento(event: any) {
-    this.segmentoSeleccionado = event.detail.value;
-  }
-
   setOpen(isOpen: boolean) {
     this.isModalOpen = isOpen
+  }
+
+  isModalOpen2: boolean = false;
+
+  setOpen2(isOpen: boolean) {
+    this.isModalOpen2 = isOpen
+  }
+  cambiarSegmento(event: any) {
+    this.segmentoSeleccionado = event.detail.value;
   }
 }
