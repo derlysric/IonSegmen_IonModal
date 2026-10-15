@@ -1,2 +1,21 @@
 // For information on how to create your own theme, please refer to:
 // https://ionicframework.com/docs/theming/
+:root {
+  --ion-font-family: "Inter", sans-serif;
+
+  --ion-color-primary: #635bff;
+  --ion-color-primary-rgb: 99, 91, 255;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-shade: #5750e5;
+  --ion-color-primary-tint: #736cff;
+
+  --ion-background-color: #f8fafc;
+  --ion-text-color: #172033;
+}
+
+ion-button {
+  --border-radius: 12px;
+  --box-shadow: none;
+  font-weight: 600;
+  letter-spacing: 0;
+}
