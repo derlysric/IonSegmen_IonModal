@@ -18,7 +18,8 @@ import {
   IonButton,
   IonButtons,
   IonModal,
-  IonIcon
+  IonIcon,
+
 } from '@ionic/angular';
 
 @Component({
@@ -49,7 +50,7 @@ import {
   ],
 })
 export class HomePage {
-  segmentoSeleccionado: string = 'todos';
+  segmentoSeleccionado: string = 'segment';
 
   isModalOpen: boolean = false;
 
