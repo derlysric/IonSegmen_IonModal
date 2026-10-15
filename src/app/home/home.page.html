@@ -21,84 +21,37 @@
 
   <!-- PESTAÑA ION SEGMENT -->
   @if (segmentoSeleccionado === 'segment') {
-<ion-segment value="default">
+<ion-segment value="default" class="segmentos-espaciados">
   <ion-segment-button value="default">
-    <ion-label>Default</ion-label>
+    <ion-label>Navegación horizontal compacta</ion-label>
   </ion-segment-button>
-  <ion-segment-button value="segment">
-    <ion-label>Segment</ion-label>
+  <ion-segment-button value="segment" class="segmentos-verticales">
+    <ion-label>Permite conmutar entre diferentes vistas en un mismo espacio de pantalla</ion-label>
   </ion-segment-button>
 </ion-segment>
 <ion-segment color="primary" value="primary">
-  <ion-segment-button value="primary">
-    <ion-label>Primary</ion-label>
+  <ion-segment-button value="primary" class="segmentos-verticales"
+  >
+    <ion-label>Fácil integración con ngModel</ion-label>
   </ion-segment-button>
-  <ion-segment-button value="segment">
-    <ion-label>Segment</ion-label>
+  <ion-segment-button value="segment" class="segmentos-verticales">
+    <ion-label>Vincula la opción seleccionada con la lógica de TypeScript dinámicamente.</ion-label>
   </ion-segment-button>
 </ion-segment>
 <ion-segment color="secondary" value="secondary">
-  <ion-segment-button value="secondary">
-    <ion-label>Secondary</ion-label>
+  <ion-segment-button value="secondary" class="segmentos-verticales">
+    <ion-label>Soporte de iconos y texto</ion-label>
   </ion-segment-button>
-  <ion-segment-button value="segment">
-    <ion-label>Segment</ion-label>
+  <ion-segment-button value="segment" class="segmentos-verticales">
+    <ion-label>Admite el uso de ion-icon, ion-label o ambos dentro de cada ion-segment-button</ion-label>
   </ion-segment-button>
 </ion-segment>
 <ion-segment color="tertiary" value="tertiary">
-  <ion-segment-button value="tertiary">
-    <ion-label>Tertiary</ion-label>
+  <ion-segment-button value="tertiary" class="segmentos-verticales">
+    <ion-label>Adaptación multiplataforma</ion-label>
   </ion-segment-button>
-  <ion-segment-button value="segment">
-    <ion-label>Segment</ion-label>
-  </ion-segment-button>
-</ion-segment>
-<ion-segment color="success" value="success">
-  <ion-segment-button value="success">
-    <ion-label>Success</ion-label>
-  </ion-segment-button>
-  <ion-segment-button value="segment">
-    <ion-label>Segment</ion-label>
-  </ion-segment-button>
-</ion-segment>
-<ion-segment color="warning" value="warning">
-  <ion-segment-button value="warning">
-    <ion-label>Warning</ion-label>
-  </ion-segment-button>
-  <ion-segment-button value="segment">
-    <ion-label>Segment</ion-label>
-  </ion-segment-button>
-</ion-segment>
-<ion-segment color="danger" value="danger">
-  <ion-segment-button value="danger">
-    <ion-label>Danger</ion-label>
-  </ion-segment-button>
-  <ion-segment-button value="segment">
-    <ion-label>Segment</ion-label>
-  </ion-segment-button>
-</ion-segment>
-<ion-segment color="light" value="light">
-  <ion-segment-button value="light">
-    <ion-label>Light</ion-label>
-  </ion-segment-button>
-  <ion-segment-button value="segment">
-    <ion-label>Segment</ion-label>
-  </ion-segment-button>
-</ion-segment>
-<ion-segment color="medium" value="medium">
-  <ion-segment-button value="medium">
-    <ion-label>Medium</ion-label>
-  </ion-segment-button>
-  <ion-segment-button value="segment">
-    <ion-label>Segment</ion-label>
-  </ion-segment-button>
-</ion-segment>
-<ion-segment color="dark" value="dark">
-  <ion-segment-button value="dark">
-    <ion-label>Dark</ion-label>
-  </ion-segment-button>
-  <ion-segment-button value="segment">
-    <ion-label>Segment</ion-label>
+  <ion-segment-button value="segment" class="segmentos-verticales">
+    <ion-label>Aplica automáticamente estilos según el sistema operativo (iOS o Android)</ion-label>
   </ion-segment-button>
 </ion-segment>
   }

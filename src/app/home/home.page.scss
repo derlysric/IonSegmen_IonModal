@@ -25,3 +25,13 @@
 #container a {
   text-decoration: none;
 }
+
+.segmentos-verticales {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.segmentos-verticales ion-label {
+  font-size: 13px;
+}
