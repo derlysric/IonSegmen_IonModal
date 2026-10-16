@@ -1,16 +1,19 @@
-<ion-header [translucent]="true">
+ <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Ejemplo IonSegment e IonModal</ion-title>
+    <ion-title>Demo: Segment & Modal</ion-title>
   </ion-toolbar>
 
+  <!-- Control de Pestañas/Segmentos en el Header -->
   <ion-toolbar>
-    <ion-segment [(ngModel)]="segmentoSeleccionado" (ionChange)="cambiarSegmento($event)">
-      <ion-segment-button value="segment">
-        <ion-label>Ion Segment</ion-label>
+    <ion-segment value="seccion-segment">
+      <!-- Lado 1: Pestaña para explicar Segment -->
+      <ion-segment-button value="seccion-segment" content-id="vista-segment">
+        <ion-label>1. Segment</ion-label>
       </ion-segment-button>
 
-      <ion-segment-button value="modal">
-        <ion-label>Ion Modal</ion-label>
+      <!-- Lado 2: Pestaña para explicar Modal -->
+      <ion-segment-button value="seccion-modal" content-id="vista-modal">
+        <ion-label>2. Modal</ion-label>
       </ion-segment-button>
 
     </ion-segment>
@@ -19,176 +22,100 @@
 
 <ion-content class="ion-padding">
 
-  <!-- PESTAÑA ION SEGMENT -->
-  @if (segmentoSeleccionado === 'segment') {
-<ion-segment value="default" class="segmentos-espaciados">
-  <ion-segment-button value="default">
-    <ion-label>Navegación horizontal compacta</ion-label>
+  <ion-segment-view>
+    <ion-segment-content id="vista-segment">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>¿Cómo funciona ion-segment?</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>
+            El componente <strong>ion-segment</strong> sirve para alternar entre diferentes vistas o filtros dentro de la misma pantalla sin cambiar de página.
+          </p>
+          <ul>
+            <li><strong>content-id:</strong> Conecta el botón de la barra con la vista correspondiente.</li>
+            <li><strong>ion-segment-view:</strong> Engloba y gestiona el intercambio de contenido.</li>
+          </ul>
+          <ion-segment>
+  <ion-segment-button value="first" content-id="first">
+    <ion-label>segmento 1</ion-label>
   </ion-segment-button>
-  <ion-segment-button value="segment" class="segmentos-verticales">
-    <ion-label>Permite conmutar entre diferentes vistas en un mismo espacio de pantalla</ion-label>
+  <ion-segment-button value="second" content-id="second">
+    <ion-label>Segmento 2</ion-label>
   </ion-segment-button>
-</ion-segment>
-<ion-segment color="primary" value="primary">
-  <ion-segment-button value="primary" class="segmentos-verticales"
-  >
-    <ion-label>Fácil integración con ngModel</ion-label>
-  </ion-segment-button>
-  <ion-segment-button value="segment" class="segmentos-verticales">
-    <ion-label>Vincula la opción seleccionada con la lógica de TypeScript dinámicamente.</ion-label>
-  </ion-segment-button>
-</ion-segment>
-<ion-segment color="secondary" value="secondary">
-  <ion-segment-button value="secondary" class="segmentos-verticales">
-    <ion-label>Soporte de iconos y texto</ion-label>
-  </ion-segment-button>
-  <ion-segment-button value="segment" class="segmentos-verticales">
-    <ion-label>Admite el uso de ion-icon, ion-label o ambos dentro de cada ion-segment-button</ion-label>
+  <ion-segment-button value="third" content-id="third">
+    <ion-label>Segmento 3</ion-label>
   </ion-segment-button>
 </ion-segment>
-<ion-segment color="tertiary" value="tertiary">
-  <ion-segment-button value="tertiary" class="segmentos-verticales">
-    <ion-label>Adaptación multiplataforma</ion-label>
-  </ion-segment-button>
-  <ion-segment-button value="segment" class="segmentos-verticales">
-    <ion-label>Aplica automáticamente estilos según el sistema operativo (iOS o Android)</ion-label>
-  </ion-segment-button>
-</ion-segment>
-  }
+<ion-segment-view>
+  <ion-segment-content id="first"> Contenido del segmento 1 </ion-segment-content>
+  <ion-segment-content id="second">Contenido del segmento 2</ion-segment-content>
+  <ion-segment-content id="third">Contenido del segmento 3 </ion-segment-content>
+</ion-segment-view>
+        </ion-card-content>
+      </ion-card>
+    </ion-segment-content>
 
-  <!-- PESTAÑA ION MODAL -->
-  @if (segmentoSeleccionado === 'modal') {
-    <ion-button expand="block" (click)="setOpen2(true)">
-      ION MODAL +
-    </ion-button>
+    <ion-segment-content id="vista-modal">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>¿Cómo funciona ion-modal?</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>
+            El <strong>ion-modal</strong> es un diálogo superpuesto que se abre sin destruir el contexto de la vista actual.
+          </p>
 
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Características de IonModal</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-list>
-          <ion-item>
-            <ion-label>
-              <h3>Superposición contextual</h3>
-              <p>Muestra contenido prioritario sobre la interfaz sin abandonar la pantalla actual.</p>
-            </ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label>
-              <h3>Control de estado reactivo</h3>
-              <p>Se abre o se cierra al enlazar la propiedad [isOpen] con variables booleanas.</p>
-            </ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label>
-              <h3>Encapsulación con ng-template</h3>
-              <p>Optimiza el rendimiento cargando los elementos del modal solo cuando está visible.</p>
-            </ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label>
-              <h3>Diseño responsivo y versátil</h3>
-              <p>Permite personalizar cabecera, botones de cierre y gestos para deslizar.</p>
-            </ion-label>
-          </ion-item>
-        </ion-list>
-      </ion-card-content>
-    </ion-card>
-  }
+          <!-- Botón que activa el modal de forma declarativa con trigger -->
+          <ion-button id="open-modal-btn" expand="block" class="ion-margin-top">
+            Abrir Formulario Modal
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-segment-content>
 
-  <!-- COMPONENTE MODAL -->
-  <ion-modal [isOpen]="isModalOpen">
+  </ion-segment-view>
+
+  <!-- ========================================================= -->
+  <!-- COMPONENTE MODAL (VINCULADO AL BOTÓN MEDIANTE TRIGGER)   -->
+  <!-- ========================================================= -->
+  <ion-modal trigger="open-modal-btn">
     <ng-template>
       <ion-header>
-        <ion-toolbar color="tertiary">
-          <ion-title>Más de IonSegment</ion-title>
+        <ion-toolbar color="light">
+          <ion-title>Registro en Modal</ion-title>
           <ion-buttons slot="end">
-            <ion-button (click)="setOpen(false)">Cerrar</ion-button>
+            <ion-button (click)="cerrarModal()">Cerrar</ion-button>
           </ion-buttons>
         </ion-toolbar>
       </ion-header>
+
       <ion-content class="ion-padding">
-        <h2>Guía y Uso de IonSegment</h2>
-        <p>
-        Los <strong>IonSegment</strong> son barras de navegación que organizan y filtran contenido dentro de una misma vista, mejorando la experiencia de usuario en aplicaciones móviles.
-        </p>
-        <ion-list lines="full">
         <ion-item>
-          <ion-icon name="options-outline" slot="start" color="primary"></ion-icon>
-          <ion-label>
-            <h3>Filtrado de Contenido</h3>
-            <p>Ideal para alternar entre categorías, estados o vistas sin cambiar de página.</p>
-          </ion-label>
+          <ion-input
+            label="Nombre completo"
+            labelPlacement="floating"
+            [(ngModel)]="usuario.nombre"
+            placeholder="Ej: Derlys Ricardo">
+          </ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-icon name="swap-horizontal-outline" slot="start" color="primary"></ion-icon>
-          <ion-label>
-            <h3>Manejo de Eventos</h3>
-            <p>Utiliza <code>(ionChange)</code> para capturar la selección del usuario en tiempo real.</p>
-          </ion-label>
+          <ion-input
+            label="Correo electrónico"
+            labelPlacement="floating"
+            type="email"
+            [(ngModel)]="usuario.email"
+            placeholder="correo@ejemplo.com">
+          </ion-input>
         </ion-item>
 
-        <ion-item>
-          <ion-icon name="color-palette-outline" slot="start" color="primary"></ion-icon>
-          <ion-label>
-            <h3>Personalización</h3>
-            <p>Permite incluir iconos, texto y personalizar los estilos CSS fácilmente.</p>
-          </ion-label>
-        </ion-item>
-      </ion-list>
-        <ion-button expand="block" color="danger" (click)="setOpen(false)">
-          Cerrar Modal
-        </ion-button>
-      </ion-content>
-    </ng-template>
-  </ion-modal>
-
-  <!-- SEGUNDO COMPONENTE MODAL -->
-  <ion-modal [isOpen]="isModalOpen2">
-    <ng-template>
-      <ion-header>
-        <ion-toolbar color="tertiary">
-          <ion-title>Más de IonModal</ion-title>
-          <ion-buttons slot="end">
-            <ion-button (click)="setOpen2(false)">Cerrar</ion-button>
-          </ion-buttons>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content class="ion-padding">
-        <h2>Guía y Uso de IonModal</h2>
-        <p>
-          El componente <strong>IonModal</strong> es una ventana superpuesta que aparece sobre el contenido principal para solicitar información o mostrar detalles adicionales.
-        </p>
-
-        <ion-list lines="full">
-          <ion-item>
-            <ion-icon name="layers-outline" slot="start" color="tertiary"></ion-icon>
-            <ion-label>
-              <h3>Tipos de Modales</h3>
-              <p>Se puede implementar como cuadro de diálogo flotante o como tarjeta (*Sheet Modal*).</p>
-            </ion-label>
-          </ion-item>
-
-          <ion-item>
-            <ion-icon name="code-slash-outline" slot="start" color="tertiary"></ion-icon>
-            <ion-label>
-              <h3>Uso con Inline Template</h3>
-              <p>Se puede vincular fácilmente mediante la propiedad <code>[isOpen]</code> o mediante <code>ModalController</code>.</p>
-            </ion-label>
-          </ion-item>
-
-          <ion-item>
-            <ion-icon name="construct-outline" slot="start" color="tertiary"></ion-icon>
-            <ion-label>
-              <h3>Paso de Datos</h3>
-              <p>Permite enviar y recibir parámetros entre la vista principal y la ventana emergente.</p>
-            </ion-label>
-          </ion-item>
-        </ion-list>
-        <ion-button expand="block" color="danger" (click)="setOpen2(false)">
-          Cerrar Modal
+        <ion-button
+          expand="block"
+          color="success"
+          class="ion-margin-top"
+          (click)="guardarUsuario()">
+          Guardar Registro
         </ion-button>
       </ion-content>
     </ng-template>

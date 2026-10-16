@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
@@ -9,23 +9,23 @@ import {
   IonSegment,
   IonSegmentButton,
   IonLabel,
-  IonList,
+  IonSegmentView,
+  IonSegmentContent,
+  IonButton,
+  IonModal,
+  IonButtons,
   IonItem,
+  IonInput,
   IonCard,
   IonCardHeader,
   IonCardTitle,
-  IonCardContent,
-  IonButton,
-  IonButtons,
-  IonModal,
-  IonIcon,
-
+  IonCardContent
 } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss'],
   standalone: true,
   imports: [
     CommonModule,
@@ -37,33 +37,35 @@ import {
     IonSegment,
     IonSegmentButton,
     IonLabel,
-    IonList,
+    IonSegmentView,
+    IonSegmentContent,
+    IonButton,
+    IonModal,
+    IonButtons,
     IonItem,
+    IonInput,
     IonCard,
     IonCardHeader,
     IonCardTitle,
-    IonCardContent,
-    IonButton,
-    IonButtons,
-    IonModal,
-    IonIcon
-  ],
+    IonCardContent
+  ]
 })
 export class HomePage {
-  segmentoSeleccionado: string = 'segment';
 
-  isModalOpen: boolean = false;
+  @ViewChild(IonModal) modal!: IonModal;
 
-  setOpen(isOpen: boolean) {
-    this.isModalOpen = isOpen
+  usuario = {
+    nombre: '',
+    email: ''
+  };
+
+  guardarUsuario() {
+    console.log('Datos guardados:', this.usuario);
+    this.modal.dismiss();
   }
 
-  isModalOpen2: boolean = false;
-
-  setOpen2(isOpen: boolean) {
-    this.isModalOpen2 = isOpen
-  }
-  cambiarSegmento(event: any) {
-    this.segmentoSeleccionado = event.detail.value;
+  cerrarModal() {
+    this.modal.dismiss();
   }
 }
+
